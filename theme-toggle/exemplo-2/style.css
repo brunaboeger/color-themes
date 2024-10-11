@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&display=swap");
+
+:root {
+  --stroke-width: 2;
+  --gutter: 1rem;
+
+  --color-light: #fdffc4;
+  --color-dark: #00332a;
+  --color-primary: #dbffa2;
+  --color-secondary: #c3fcf2;
+  --color-accent: #ff7750;
+
+  --foreground: var(--color-dark);
+  --background: var(--color-light);
+}
+
+.dark-mode {
+  --color-light: #fdffc4;
+  --color-dark: #00332a;
+  --color-primary: #202302;
+  --color-secondary: #00100d;
+  --color-accent: #ff7750;
+
+  --foreground: var(--color-light);
+  --background: var(--color-dark);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(
+    120deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  color: var(--foreground);
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Assistant", sans-serif;
+}
+
+button {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+#dark-mode-toggle {
+  position: absolute;
+  right: var(--gutter);
+  top: var(--gutter);
+}
+
+.button {
+  padding: 0.8rem 1.3rem;
+  border-radius: 0.3rem;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 500;
+  position: relative;
+}
+
+.button::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: var(--foreground) 2px solid;
+  left: -4px;
+  top: 2px;
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.button-primary {
+  color: var(--foreground);
+  background: var(--color-accent);
+}
+
+.button-secondary {
+  color: var(--background);
+  background: var(--foreground);
+}
+
+.page-content {
+  height: 100vh;
+  padding: calc(var(--gutter) * 4);
+  display: flex;
+}
+
+.page-content .content {
+  margin: auto 0;
+  width: 40rem;
+}
+
+.page-content .content .page-title {
+  font-family: "Playfair Display", serif;
+  font-size: 5rem;
+  margin: 0 0 var(--gutter) 0;
+}
+
+.page-content .content .page-description {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.page-actions {
+  display: flex;
+  gap: var(--gutter);
+  align-items: center;
+  margin-top: calc(var(--gutter) * 3);
+}

@@ -1,0 +1,151 @@
+.light-theme {
+  --color-foreground: hsl(0 0% 0%);
+  --color-background: hsl(0 0% 100%);
+}
+
+.dark-theme {
+  --color-foreground: hsl(0 0% 100%);
+  --color-background: hsl(0 0% 0%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-background);
+  color: var(--color-foreground);
+}
+
+#theme-toggle {
+  cursor: pointer;
+  background: 0;
+  border: 0;
+  opacity: 0.7;
+  padding: 0.6rem;
+  border-radius: 50%;
+  position: relative;
+  isolation: isolate;
+}
+
+#theme-toggle svg,
+#theme-toggle svg path,
+#theme-toggle svg circle {
+  fill: var(--color-foreground);
+}
+
+#theme-toggle:hover,
+#theme-toggle:focus {
+  background: hsl(0 0% 50% / 0.15);
+  opacity: 1;
+}
+
+#theme-toggle::after {
+  content: attr(aria-label);
+  position: absolute;
+  color: var(--color-background);
+  background: var(--color-foreground);
+  width: max-content;
+  font-size: 1.2rem;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 4.5rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 0.3rem;
+  opacity: 0;
+  transform: scale(0);
+  transform-origin: top;
+  transition: transform 0ms linear 100ms, opacity 80ms linear;
+}
+
+#theme-toggle::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: hsl(0 0% 50% / 0.2);
+  border-radius: inherit;
+  transform: scale(0);
+  opacity: 0;
+  z-index: -1;
+}
+
+.light-theme #theme-toggle::before {
+  animation: pulseToLight 650ms ease-out;
+}
+
+.dark-theme #theme-toggle::before {
+  animation: pulseToDark 650ms ease-out;
+}
+
+#theme-toggle:hover::after,
+#theme-toggle:focus-visible::after {
+  opacity: 0.7;
+  transform: scale(1);
+  transition: transform 70ms linear, opacity 80ms linear;
+}
+
+.toggle-circle {
+  transition: transform 250ms ease-out;
+}
+
+.light-theme .toggle-circle {
+  transform: translateX(-15%);
+}
+
+.toggle-sun {
+  transform-origin: center;
+  transition: transform 1000ms cubic-bezier(0.24, 0.42, 0.56, 1.38);
+}
+
+.light-theme .toggle-sun {
+  transform: rotate(0.75turn);
+}
+
+@keyframes pulseToLight {
+  0% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+
+  10% {
+    transform: scale(1);
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulseToDark {
+  0% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+
+  10% {
+    transform: scale(1);
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}

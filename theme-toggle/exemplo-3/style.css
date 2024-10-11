@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&display=swap");
+
+:root {
+  --white: #fff;
+  --dark: #000;
+  --purple-500: #7d1ad4;
+  --purple-600: #6e17b9;
+}
+
+[data-theme="dark"] {
+  --white: #000;
+  --dark: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Assistant", sans-serif;
+  background-color: var(--white);
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  background-color: var(--dark);
+  color: var(--white);
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+button {
+  width: 5rem;
+  height: 5rem;
+  padding: 0.4rem;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: var(--purple-500);
+  transition: background-color 400ms ease-in-out;
+}
+
+button:hover {
+  background-color: var(--purple-600);
+}
+
+svg {
+  color: var(--white);
+}
