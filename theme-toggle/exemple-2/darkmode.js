@@ -1,3 +1,6 @@
+// tutorial: https://www.youtube.com/watch?v=wodWDIdV9BY&list=PL4-IK0AVhVjNPZD78QbOslWCC_SaMCbv5
+// https://www.youtube.com/watch?v=_yCgeXFAXTM
+
 let darkMode = localStorage.getItem("darkMode");
 const darkModeToggle = document.querySelector("#dark-mode-toggle");
 

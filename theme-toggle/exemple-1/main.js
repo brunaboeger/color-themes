@@ -1,3 +1,5 @@
+// tutorial: https://www.youtube.com/watch?v=QtuLN0lNb-Y
+
 const themeToggle = document.querySelector("#theme-toggle");
 
 themeToggle.addEventListener("click", () => {
