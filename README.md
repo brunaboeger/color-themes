@@ -4,7 +4,7 @@ Everything I discover along the way, I'll be adding here. It's mainly CSS resour
 
 ## Theme toggle
 
-3 different ways to switch theme with HTML, CSS and JavaScript.
+Different ways to switch theme with HTML, CSS and JavaScript.
 
 - Example-1: using dark-theme and light-theme classes (this one simulates Google Fonts old switch)
 - Example-2: using root variables and dark-mode class
